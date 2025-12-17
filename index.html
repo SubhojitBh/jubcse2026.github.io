@@ -1,153 +1,299 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jadavpur University — CSE — Class of 2026</title>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-    <style>
-      :root{ --bg:#f6f8fb; --card:#ffffff; --muted:#64748b; --accent:#07102a; --accent-2:#0f172a; --accent-cta:#60a5fa }
-      *{box-sizing:border-box}
-      body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:var(--accent-2);-webkit-font-smoothing:antialiased}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jadavpur University — CSE — Class of 2026</title>
 
-      /* Header */
-      header.site-header{background:linear-gradient(180deg,var(--accent) 0%, var(--accent-2) 100%);color:#fff;padding:36px 16px}
-      .site-header .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;justify-content:space-between}
-      .site-brand{display:flex;flex-direction:column}
-      .site-brand .uni{font-size:15px;opacity:0.95}
-      .site-brand h1{margin:6px 0 0;font-size:28px}
-      .site-meta{font-size:13px;opacity:0.95}
-      .repo-link{background:rgba(255,255,255,0.08);padding:8px 12px;border-radius:8px;font-size:13px;color:#fff;text-decoration:none}
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --border:#e5e7eb;
+      --accent:#1e3a8a;
+      --accent-soft:#eff6ff;
+    }
 
-      main{max-width:1100px;margin:28px auto;padding:0 16px}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-      /* Hero */
-      .hero-card{background:var(--card);padding:28px;border-radius:12px;margin-top:-48px;box-shadow:0 12px 36px rgba(2,6,23,0.08);display:flex;align-items:center;justify-content:space-between;gap:12px}
-      .hero-left h2{margin:0 0 6px;font-size:20px}
-      .hero-left .desc{color:var(--muted);font-size:14px}
-      .hero-right{font-size:13px;color:var(--muted);text-align:right}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-      /* Controls */
-      .controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0}
-      .controls .desc{color:var(--muted)}
-      .controls a{color:var(--accent-cta);text-decoration:none}
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px;
+    }
 
-      /* Students grid */
-      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:6px}
-      .tile{background:var(--card);border-radius:12px;padding:18px 16px 20px;box-shadow:0 6px 18px rgba(2,6,23,0.06);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .18s ease,box-shadow .18s ease}
-      .tile:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.08)}
-      .avatar-wrap{width:120px;height:120px;border-radius:999px;overflow:hidden;margin-top:-72px;border:6px solid #fff;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
-      .avatar{width:100%;height:100%;object-fit:cover;display:block}
-      .tile h3{margin:12px 0 6px;font-size:16px}
-      .tile p{margin:0;color:var(--muted);font-size:14px;line-height:1.3}
+    /* Header */
+    header{
+      background:#0f172a;
+      color:#fff;
+      padding:28px 0;
+    }
+    header h1{
+      margin:0;
+      font-size:26px;
+      font-weight:600;
+    }
+    header p{
+      margin:6px 0 0;
+      color:#cbd5f5;
+      font-size:14px;
+    }
 
-      /* How-to (compact) */
-      .howto{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
-      .howto pre{background:#0f172a;color:#fff;padding:10px;border-radius:8px;overflow:auto;font-size:13px}
+    .header-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+      flex-wrap:wrap;
+    }
 
-      /* Batch photo */
-      #batchImg{max-width:100%;height:auto;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,0.08);display:block;margin:12px auto}
+    .repo{
+      font-size:13px;
+      background:rgba(255,255,255,.1);
+      padding:8px 12px;
+      border-radius:6px;
+      color:#fff;
+      white-space:nowrap;
+    }
 
-      footer{max-width:1100px;margin:28px auto;padding:16px;color:var(--muted);font-size:13px;text-align:center}
+    /* Sections */
+    section{margin-top:40px}
 
-      @media (max-width:720px){
-        .hero-card{flex-direction:column;align-items:flex-start}
-        .site-header .wrap{flex-direction:column;align-items:flex-start}
-        .hero-right{text-align:left}
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="wrap">
-        <div class="site-brand">
-          <div class="uni">Jadavpur University</div>
-          <h1>Computer Science & Engineering — Class of 2026</h1>
-          <div class="site-meta">A digital yearbook for the graduating batch</div>
-        </div>
-        <div>
-          <a class="repo-link" href="https://github.com/jubcse2026/jubcse2026.github.io" target="_blank" rel="noopener">github.com/jubcse2026/jubcse2026.github.io</a>
-        </div>
-      </div>
-    </header>
+    h2{
+      font-size:20px;
+      margin-bottom:6px;
+    }
 
-    <main>
-      <div class="hero-card">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-          <div>
-            <h2 style="margin:0 0 6px">Class Yearbook</h2>
-            <div class="desc">Profiles below are added via Pull Requests. See the repository README for contribution instructions.</div>
-          </div>
-          <div style="text-align:right;color:var(--muted);font-size:14px">Batch: <strong>2026</strong></div>
-        </div>
-      </div>
+    .section-desc{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:18px;
+    }
 
-      <div style="height:18px"></div>
+    /* Grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      gap:20px;
+    }
 
-      <div class="controls">
-        <div class="desc">Profiles</div>
-        <div><a href="README.md">How to contribute (README)</a></div>
-      </div>
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:18px;
+      transition:box-shadow .15s ease,transform .15s ease;
+    }
 
-      <section id="students-area">
-        <div id="grid" class="grid">
-          <!-- student tiles inserted here -->
-        </div>
-        <div id="empty" style="text-align:center;color:var(--muted);margin-top:28px;display:none">No profiles yet — open a PR to add yours.</div>
-      </section>
+    .card:hover{
+      box-shadow:0 10px 28px rgba(2,6,23,.08);
+      transform:translateY(-2px);
+    }
 
-      <section class="howto" style="margin-top:20px">
-        <h3 style="margin-top:0">How to add your profile (quick)</h3>
-        <p style="color:var(--muted);margin:6px 0 12px">Full instructions are in the repository README — the quick steps are below.</p>
-        <details>
-          <summary style="cursor:pointer;margin-bottom:8px;color:var(--accent-2)">Show quick clone & add steps</summary>
-          <pre>git clone https://github.com/jubcse2026/jubcse2026.github.io.git
+    .avatar{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:10px;
+      background:#e5e7eb;
+      margin-bottom:12px;
+    }
+
+    .card h3{
+      margin:4px 0;
+      font-size:16px;
+      font-weight:600;
+    }
+
+    .quote{
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    /* Empty state */
+    .empty{
+      text-align:center;
+      color:var(--muted);
+      padding:40px 0;
+    }
+
+    /* Batch photo */
+    .batch img{
+      max-width:100%;
+      border-radius:12px;
+      box-shadow:0 10px 28px rgba(2,6,23,.12);
+      margin-top:12px;
+    }
+
+    /* Contribution section */
+    .contribute{
+      background:var(--accent-soft);
+      border:1px solid #dbeafe;
+      border-radius:12px;
+      padding:20px;
+    }
+
+    .contribute pre{
+      background:#020617;
+      color:#e5e7eb;
+      padding:14px;
+      border-radius:8px;
+      font-size:13px;
+      overflow:auto;
+    }
+
+    footer{
+      margin:48px 0 24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media(max-width:640px){
+      header h1{font-size:22px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-row">
+    <div>
+      <h1>Jadavpur University — Computer Science & Engineering</h1>
+      <p>Class of 2026 · Digital Yearbook</p>
+    </div>
+    <a class="repo"
+       href="https://github.com/jubcse2026/jubcse2026.github.io"
+       target="_blank"
+       rel="noopener">
+      View on GitHub
+    </a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Profiles -->
+  <section>
+    <h2>Student Profiles</h2>
+    <p class="section-desc">
+      Profiles are added by students via Pull Requests.
+      <a href="#contribute">Add yours</a>
+    </p>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" style="display:none">
+      No profiles yet. Be the first to add yours 🙂
+    </div>
+  </section>
+
+  <!-- Batch Photo -->
+  <section class="batch">
+    <h2>Batch Photo</h2>
+    <!-- <p class="section-desc">
+      Upload <code>images/batch.jpg</code> to display the full class photo.
+    </p> -->
+    <img src="images/batch.jpeg"
+         alt="Jadavpur University CSE Class of 2026"
+         onerror="this.style.display='none'">
+  </section>
+
+  <!-- Contribution (correct placement) -->
+  <section id="contribute" class="contribute">
+    <h2>How to add your name to this page</h2>
+    <p class="section-desc">
+      This page is community-maintained. Add your profile by opening a Pull Request.
+    </p>
+
+<pre>git clone https://github.com/jubcse2026/jubcse2026.github.io.git
 cd jubcse2026.github.io
 cp students/template.json students/your-id.json
-edit students/your-id.json and add images/your-id.jpg to images/
-add "your-id.json" to students/index.json
-git add . && git commit -m "Add profile: your-id" && git push
-</pre>
-        </details>
-        <p style="color:var(--muted);margin:8px 0">After your PR is merged the site will be redeployed automatically and your profile will appear.</p>
-      </section>
+# add your photo to images/
+git add .
+git commit -m "Add profile: your name"
+git push</pre>
 
-      <section id="batch-photo" style="margin-top:22px;text-align:center">
-        <h3 style="margin-bottom:8px">Full Batch Photo</h3>
-        <!-- <p style="color:var(--muted);margin-top:0;margin-bottom:8px">Upload <strong>images/batch.jpg</strong> to show the full class photo here. (Hidden if not present)</p> -->
-        <img id="batchImg" src="images/batch.jpeg" alt="Full batch photo" onerror="this.style.display='none'">
-      </section>
-    </main>
+    <p class="section-desc">
+      Full instructions are available in the repository README.
+    </p>
+  </section>
 
-    <footer>
-      © 2026 Jadavpur University — CSE • Built with GitHub Pages
-    </footer>
+</main>
 
-    <script>
-      async function loadStudents(){
-        const grid=document.getElementById('grid');
-        const empty=document.getElementById('empty');
+<footer>
+  © 2026 Jadavpur University — Computer Science & Engineering
+</footer>
+
+<script>
+async function loadStudents(){
+  const grid=document.getElementById('grid');
+  const empty=document.getElementById('empty');
+
+  try{
+    const res=await fetch('students/index.json',{cache:'no-store'});
+    if(!res.ok) throw 0;
+
+    const list=await res.json();
+    if(!Array.isArray(list) || list.length===0){
+      empty.style.display='block';
+      return;
+    }
+
+    const students=await Promise.all(
+      list.map(async f=>{
         try{
-          const res=await fetch('students/index.json', {cache: 'no-store'});
-          if(!res.ok) throw new Error('manifest not found');
-          const list=await res.json();
-          if(!Array.isArray(list) || list.length===0){ empty.style.display='block'; return }
-          const students = await Promise.all(list.map(async (fn)=>{
-            try{ const r=await fetch('students/'+fn); if(!r.ok) throw 0; return await r.json() }catch(e){console.warn('failed',fn);return null}
-          }));
-          const valid = students.filter(Boolean);
-          if(valid.length===0){ empty.style.display='block'; return }
-          valid.forEach(s=>{
-            const el=document.createElement('article'); el.className='tile';
-            const img=document.createElement('img'); img.className='avatar'; img.alt = s.name || 'Student photo'; img.src = s.image || ('images/'+(s.id||'placeholder') );
-            el.appendChild(img);
-            const h=document.createElement('h3'); h.textContent = s.name || 'Unnamed'; el.appendChild(h);
-            const p=document.createElement('p'); p.textContent = s.quote || ''; el.appendChild(p);
-            grid.appendChild(el);
-          })
-        }catch(err){ console.error(err); empty.style.display='block'; }
-      }
-      document.addEventListener('DOMContentLoaded', loadStudents);
-    </script>
-  </body>
+          const r=await fetch('students/'+f);
+          return r.ok ? await r.json() : null;
+        }catch{ return null; }
+      })
+    );
+
+    const valid=students.filter(Boolean);
+    if(!valid.length){
+      empty.style.display='block';
+      return;
+    }
+
+    valid.forEach(s=>{
+      const card=document.createElement('article');
+      card.className='card';
+
+      const img=document.createElement('img');
+      img.className='avatar';
+      img.src=s.image||'';
+      img.alt=s.name||'Student photo';
+
+      const h=document.createElement('h3');
+      h.textContent=s.name||'Unnamed';
+
+      const q=document.createElement('div');
+      q.className='quote';
+      q.textContent=s.quote||'';
+
+      card.append(img,h,q);
+      grid.appendChild(card);
+    });
+
+  }catch{
+    empty.style.display='block';
+  }
+}
+
+document.addEventListener('DOMContentLoaded',loadStudents);
+</script>
+
+</body>
 </html>
